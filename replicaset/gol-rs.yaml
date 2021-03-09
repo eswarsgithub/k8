@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: gol-rs
+  name: gol-dev-rs
 spec:
   minReadySeconds: 10
   replicas: 2
   selector:
     matchLabels:
       app: gol
-      version: "1.0"
+      env: dev
   template:
     metadata:
       labels:
         app: gol
-        version: "1.0"
+        env: dev
     spec:
       containers:
         - image: saieswarprasad/gameoflife:05-03-2021
